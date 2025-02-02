@@ -1,6 +1,5 @@
 'use client';
-
-import { useFilterOptionContext } from "@/app/context/filter-option-provider";
+import { useFilterOptionContext } from '@/app/context/filter-option-provider';
 
 interface ButtonProps {
   className: string;
@@ -9,15 +8,20 @@ interface ButtonProps {
   label: string;
 }
 
-const Button = ({ className, selected, handleGenderSelection, label }: ButtonProps) => {
+const Button = ({
+  className,
+  selected,
+  handleGenderSelection,
+  label,
+}: ButtonProps) => {
   return (
     <button
       onClick={handleGenderSelection}
       type="button"
-      className={`px-4 py-2 text-sm font-medium text-gray-900 border-gray-200 hover:bg-gray-100 hover:text-black-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 ${className} ${
+      className={`px-4 py-2 text-sm border-gray-200 hover:bg-gray-100 hover:text-black-700 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white ${className} ${
         selected
-          ? 'bg-gray-100 text-black-700 dark:text-white dark:bg-gray-400 font-bold'
-          : ''
+          ? 'bg-gray-100 text-black-700 dark:text-white dark:bg-gray-700 font-bold'
+          : 'font-medium text-gray-900 dark:bg-gray-800'
       }`}
     >
       {label}

@@ -9,5 +9,3 @@ export interface User {
   email: string;
   gender: Gender;
 }
-
-export type GetAllUsersFunc = () => Promise<User[]>;
