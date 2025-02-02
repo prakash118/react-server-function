@@ -21,7 +21,7 @@ export default function Users() {
       {isPending || users === null ? (
         <div>Loading...</div>
       ) : users.length === 0 ? (
-        <div className="w-full col-span-2 text-center pt-4">No users available</div>
+        <div className="w-full col-span-2 text-center pt-4">No users found</div>
       ) : (
         users.map((user) => (
           <div

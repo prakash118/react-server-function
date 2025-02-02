@@ -18,21 +18,24 @@ export function UsersClient({
     );
   });
 
-  if (!filteredUsers.length)
-    return <div className="w-full text-center pt-4">No users available</div>;
-
   return (
     <div className="grid grid-cols-2 gap-2">
-      {filteredUsers.map((user) => (
-        <div
-          key={user.id}
-          className="block max-w-60 p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-        >
-          <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-            {user.first_name} {user.last_name}
-          </h5>
+      {!filteredUsers.length ? (
+        <div className="w-full col-span-2 text-center pt-4">
+          No users available
         </div>
-      ))}
+      ) : (
+        filteredUsers.map((user) => (
+          <div
+            key={user.id}
+            className="block max-w-60 p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          >
+            <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+              {user.first_name} {user.last_name}
+            </h5>
+          </div>
+        ))
+      )}
     </div>
   );
 }
